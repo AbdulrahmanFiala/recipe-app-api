@@ -14,11 +14,11 @@ RUN python -m venv /py && \
     /py/bin/pip install --upgrade pip && \
     /py/bin/pip install -r /tmp/requirements.txt && \
     if [$DEV = "true"]; \
-        then /py/bon/pip install -r /tmp/requirements.dev.txt ;\
-        fi && \
+        then /py/bin/pip install -r /tmp/requirements.dev.txt ;\
+    fi && \
     rm -rf /tmp && \
     adduser \
-        --disabled-password \  
+        --disabled-password \
         --no-create-home \
         django-user
 
