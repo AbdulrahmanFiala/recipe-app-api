@@ -1,7 +1,7 @@
 FROM python:3.9-alpine3.13
 LABEL maintainer='fiala'
 
-ENV PYTHONUNBUFFERD 1
+ENV PYTHONUNBUFFERED 1
 
 COPY ./requirements.txt /tmp/requirements.txt
 COPY ./app /app
@@ -17,6 +17,6 @@ RUN python -m venv /py && \
     --no-create-home \
     django-user
 
-RUN PATH="/py/bin:$PATH"
+ENV PATH="/py/bin:$PATH"
 
 USER django-user
